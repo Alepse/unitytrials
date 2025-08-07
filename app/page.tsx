@@ -1,103 +1,249 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import { Search, Users, Target, CheckCircle, Shield, Award, FileText, MapPin, TrendingUp, Heart } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+
+import TestimonialsSection from '../components/testimonials-section'
+import ImprovedFooter from '../components/improved-footer'
+import ChatbotFixed from '../components/chatbot-fixed'
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-slate-50">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-slate-200 to-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <Badge className="bg-teal-100 text-teal-700 border-teal-200 px-3 py-1 text-sm font-medium">
+                  AI-Powered Matching
+                </Badge>
+                <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                  Find Your Perfect{' '}
+                  <span className="text-teal-600">Clinical Trial</span>
+                </h1>
+                <p className="text-xl text-slate-600 leading-relaxed">
+                  Connect with life-changing clinical trials across the United States. Our AI-powered platform matches you with the right studies for your condition.
+                </p>
+              </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+              {/* Search Input */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                <div className="flex gap-4">
+                  <div className="flex-1">
+                    <Input 
+                      placeholder="Enter medical condition..." 
+                      className="border-0 text-lg focus:ring-2 focus:ring-teal-500"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <Input 
+                      placeholder="Enter location (USA only)..." 
+                      className="border-0 text-lg focus:ring-2 focus:ring-teal-500"
+                    />
+                  </div>
+                  <Button className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Search className="w-5 h-5 mr-2" />
+                    Search Trials
+                  </Button>
+                </div>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex items-center gap-6 text-sm text-slate-500">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>Free to use</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-blue-500" />
+                  <span>Privacy protected</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-purple-500" />
+                  <span>FDA approved trials</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Content - Doctor Image Only */}
+            <div className="flex items-center justify-center">
+              <img src="/doctor.svg" alt="Doctor" className="w-80 h-80 object-contain mx-auto" />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Statistics and Map Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-200 to-blue-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - USA Map */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 flex flex-col items-center justify-center">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">UNITED STATES OF AMERICA</h3>
+                <p className="text-slate-600">Clinical trial locations across all 50 states</p>
+              </div>
+              <img src="/map.svg" alt="USA Map" className="w-full max-w-md mx-auto" />
+            </div>
+
+            {/* Right Side - Statistics Grid */}
+            <div className="space-y-8">
+              <div className="grid grid-cols-2 gap-4">
+                <Card className="border-green-200 bg-green-50">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-3xl font-bold text-green-700 mb-2">50</div>
+                    <div className="text-sm text-green-600 font-medium">States Covered</div>
+                  </CardContent>
+                </Card>
+                <Card className="border-blue-200 bg-blue-50">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-3xl font-bold text-blue-700 mb-2">1,200+</div>
+                    <div className="text-sm text-blue-600 font-medium">Research Centers</div>
+                  </CardContent>
+                </Card>
+                <Card className="border-slate-200 bg-slate-50">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-3xl font-bold text-slate-700 mb-2">25K+</div>
+                    <div className="text-sm text-slate-600 font-medium">Participants</div>
+                  </CardContent>
+                </Card>
+                <Card className="border-teal-200 bg-teal-50">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-3xl font-bold text-teal-700 mb-2">100+</div>
+                    <div className="text-sm text-teal-600 font-medium">Conditions</div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Why Choose UnityTrials */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                <h4 className="text-lg font-semibold text-slate-900 mb-4">Why Choose UnityTrials?</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <span className="text-slate-700">Free trial matching service</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Shield className="w-5 h-5 text-blue-500" />
+                    <span className="text-slate-700">HIPAA compliant platform</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <TrendingUp className="w-5 h-5 text-teal-500" />
+                    <span className="text-slate-700">Advanced matching algorithm</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Users className="w-5 h-5 text-purple-500" />
+                    <span className="text-slate-700">Diverse trial opportunities</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge className="bg-slate-100 text-slate-700 border-slate-200 px-3 py-1 text-sm font-medium mb-4">
+              Our Mission
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Advancing Healthcare Through{' '}
+              <span className="text-blue-700">Inclusive Research</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Connecting diverse patient populations with groundbreaking clinical trials through innovative matching technology and inclusive enrollment practices.
+            </p>
+          </div>
+
+          {/* Process Flowchart */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-500 to-blue-500 transform -translate-x-1/2"></div>
+            
+            {/* Step 1 */}
+            <div className="relative flex items-start gap-6 mb-12">
+              <div className="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg z-10">
+                1
+              </div>
+              <Card className="border-teal-200 bg-teal-50 flex-1">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-lg font-semibold text-slate-900">Broadening Trial Eligibility Criteria</h4>
+                    <Target className="w-6 h-6 text-teal-600" />
+                  </div>
+                  <p className="text-slate-700 mb-4">
+                    Despite FDA promoting enrollment practices for clinical trials to better reflect the population most likely to use a drug if approved, challenges to participation remain.
+                  </p>
+                  <div className="flex gap-2">
+                    <Badge className="bg-teal-100 text-teal-700 border-teal-200">FDA Guidelines</Badge>
+                    <Badge className="bg-teal-100 text-teal-700 border-teal-200">Inclusion Focus</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative flex items-start gap-6">
+              <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg z-10">
+                2
+              </div>
+              <Card className="border-blue-200 bg-blue-50 flex-1">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-lg font-semibold text-slate-900">Enrolling Underrepresented Populations</h4>
+                    <Users className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <p className="text-slate-700 mb-4">
+                    Clinicians and researchers must carefully consider inclusion criteria to align with FDA guidance. Unity Trials helps connect people with appropriate research.
+                  </p>
+                  <div className="flex gap-2">
+                    <Badge className="bg-blue-100 text-blue-700 border-blue-200">Unity Trials</Badge>
+                    <Badge className="bg-blue-100 text-blue-700 border-blue-200">Diversity Focus</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <Button className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <Search className="w-5 h-5 mr-2" />
+              Find Your Clinical Trial Match
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-br from-teal-500 to-blue-600">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <div className="max-w-2xl mx-auto space-y-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white">
+              Find Your Clinical Trial Match
+            </h2>
+            <p className="text-xl text-teal-100 leading-relaxed">
+              Join thousands of participants who have found life-changing clinical trials through our platform.
+            </p>
+            <Button className="bg-white text-teal-600 hover:bg-slate-100 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <Search className="w-5 h-5 mr-2" />
+              Start Your Search
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <TestimonialsSection />
+      <ImprovedFooter />
+      <ChatbotFixed />
     </div>
-  );
+  )
 }
