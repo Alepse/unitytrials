@@ -1,10 +1,11 @@
 // AI Service for Clinical Trial Chatbot
 import { ClinicalTrial } from './clinical-trials-api'
+import { TransformedTrial } from './trials-service'
 import { answerWebsiteQuestion } from './website-knowledge'
 
 export interface AIResponse {
   message: string
-  trials?: ClinicalTrial[]
+  trials?: TransformedTrial[]
   suggestions?: string[]
   quickActions?: QuickAction[]
   intent: 'search' | 'information' | 'help' | 'greeting' | 'website' | 'general' | 'trial_details'

@@ -103,6 +103,10 @@ export interface SearchFilters {
   limit?: number
   offset?: number
   country?: string
+  intervention?: string
+  sponsor?: string
+  outcome?: string
+  dateRange?: string
 }
 
 export interface SearchResult {
@@ -500,7 +504,7 @@ export class TrialsService {
       return {
         trials: fallbackTrials,
         total: fallbackTrials.length,
-        pageToken: null,
+        pageToken: undefined,
         hasMore: false
       }
     }
@@ -633,8 +637,13 @@ export class TrialsService {
   }
 
   filterTrialsByLocation(trials: TransformedTrial[], location: string): TransformedTrial[] {
-    return trials.filter(trial => 
-      trial.location.some(loc => loc.toLowerCase().includes(location.toLowerCase()))
+    return trials.filter(trial =>
+      [
+        ...trial.location.country,
+        ...trial.location.state,
+        ...trial.location.city,
+        ...trial.location.facility
+      ].some(loc => loc.toLowerCase().includes(location.toLowerCase()))
     )
   }
 
@@ -644,8 +653,8 @@ export class TrialsService {
 
   sortTrialsByDate(trials: TransformedTrial[]): TransformedTrial[] {
     return [...trials].sort((a, b) => {
-      const dateA = new Date(a.lastUpdated).getTime()
-      const dateB = new Date(b.lastUpdated).getTime()
+      const dateA = new Date(a.dates.lastUpdated).getTime()
+      const dateB = new Date(b.dates.lastUpdated).getTime()
       return dateB - dateA
     })
   }

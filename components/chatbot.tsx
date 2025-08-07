@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { MessageCircle, X, Send, User, Loader2, Search, Target, Heart, Info, Play, Shield } from 'lucide-react'
+import { MessageCircle, X, Send, User, Loader2, Search, Target, Heart, Info, Play, Shield, Brain } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
@@ -80,21 +80,68 @@ export default function Chatbot() {
           condition: ['Type 2 Diabetes'],
           phase: ['Phase 3'],
           status: 'Recruiting',
-          location: ['United States'],
-          sponsor: 'National Institute of Diabetes and Digestive and Kidney Diseases',
-          description: 'This study evaluates a new medication for preventing Type 2 diabetes in high-risk individuals. The study is currently recruiting participants across multiple locations in the United States.',
-          eligibility: 'Adults aged 18-75 with prediabetes or high risk for diabetes',
-          ageRange: '18 - 75 years',
-          sex: 'All',
-          healthyVolunteers: 'No',
+          location: {
+            country: ['United States'],
+            state: [],
+            city: [],
+            facility: []
+          },
+          sponsor: {
+            lead: 'National Institute of Diabetes and Digestive and Kidney Diseases',
+            leadClass: 'NIH',
+            collaborators: [],
+            collaboratorClasses: []
+          },
+          description: {
+            brief: 'This study evaluates a new medication for preventing Type 2 diabetes in high-risk individuals.',
+            detailed: 'This study evaluates a new medication for preventing Type 2 diabetes in high-risk individuals. The study is currently recruiting participants across multiple locations in the United States.'
+          },
+          eligibility: {
+            criteria: 'Adults aged 18-75 with prediabetes or high risk for diabetes',
+            ageRange: '18 - 75 years',
+            sex: 'All',
+            healthyVolunteers: 'No',
+            studyPopulation: '',
+            samplingMethod: ''
+          },
           studyType: 'Interventional',
-          enrollmentCount: 500,
-          startDate: 'Jan 15, 2024',
-          completionDate: 'Dec 31, 2026',
-          lastUpdated: 'Mar 1, 2024',
+          enrollment: { count: 500, actualCount: 0 },
           keywords: ['diabetes', 'prevention', 'medication'],
           matchScore: 85,
-          isSaved: false
+          isSaved: false,
+          conditionMeshTerms: [],
+          dates: {
+            start: '',
+            completion: '',
+            primaryCompletion: '',
+            lastUpdated: '',
+            firstPosted: '',
+            resultsFirstPosted: '',
+            lastVerified: ''
+          },
+          meshTerms: [],
+          interventions: { name: [], type: [], description: [] },
+          outcomes: {
+            primary: { measure: [], description: [], timeFrame: [] },
+            secondary: { measure: [], description: [], timeFrame: [] },
+            other: { measure: [], description: [], timeFrame: [] }
+          },
+          studyDesign: {
+            allocation: '',
+            interventionModel: '',
+            primaryPurpose: '',
+            masking: '',
+            maskingDescription: '',
+            observationalModel: '',
+            timePerspective: '',
+            bioSpecRetention: '',
+            bioSpecDescription: '',
+            samplingMethod: '',
+            population: '',
+            studyPopulation: '',
+            samplingMethodDescription: ''
+          },
+          studyArms: '',
         },
         {
           id: 'fallback-2',
@@ -104,21 +151,68 @@ export default function Chatbot() {
           condition: ['Lung Cancer', 'Breast Cancer'],
           phase: ['Phase 2'],
           status: 'Recruiting',
-          location: ['United States'],
-          sponsor: 'Memorial Sloan Kettering Cancer Center',
-          description: 'This clinical trial is testing innovative immunotherapy combinations for advanced solid tumors. The study aims to improve treatment outcomes for patients with limited options.',
-          eligibility: 'Adults with advanced solid tumors who have failed standard treatments',
-          ageRange: '18+ years',
-          sex: 'All',
-          healthyVolunteers: 'No',
+          location: {
+            country: ['United States'],
+            state: [],
+            city: [],
+            facility: []
+          },
+          sponsor: {
+            lead: 'Memorial Sloan Kettering Cancer Center',
+            leadClass: 'MSK',
+            collaborators: [],
+            collaboratorClasses: []
+          },
+          description: {
+            brief: 'This clinical trial is testing innovative immunotherapy combinations for advanced solid tumors.',
+            detailed: 'This clinical trial is testing innovative immunotherapy combinations for advanced solid tumors. The study aims to improve treatment outcomes for patients with limited options.'
+          },
+          eligibility: {
+            criteria: 'Adults with advanced solid tumors who have failed standard treatments',
+            ageRange: '18+ years',
+            sex: 'All',
+            healthyVolunteers: 'No',
+            studyPopulation: '',
+            samplingMethod: ''
+          },
           studyType: 'Interventional',
-          enrollmentCount: 200,
-          startDate: 'Feb 1, 2024',
-          completionDate: 'Jun 30, 2025',
-          lastUpdated: 'Feb 15, 2024',
+          enrollment: { count: 200, actualCount: 0 },
           keywords: ['immunotherapy', 'cancer', 'solid tumors'],
           matchScore: 80,
-          isSaved: false
+          isSaved: false,
+          conditionMeshTerms: [],
+          dates: {
+            start: '',
+            completion: '',
+            primaryCompletion: '',
+            lastUpdated: '',
+            firstPosted: '',
+            resultsFirstPosted: '',
+            lastVerified: ''
+          },
+          meshTerms: [],
+          interventions: { name: [], type: [], description: [] },
+          outcomes: {
+            primary: { measure: [], description: [], timeFrame: [] },
+            secondary: { measure: [], description: [], timeFrame: [] },
+            other: { measure: [], description: [], timeFrame: [] }
+          },
+          studyDesign: {
+            allocation: '',
+            interventionModel: '',
+            primaryPurpose: '',
+            masking: '',
+            maskingDescription: '',
+            observationalModel: '',
+            timePerspective: '',
+            bioSpecRetention: '',
+            bioSpecDescription: '',
+            samplingMethod: '',
+            population: '',
+            studyPopulation: '',
+            samplingMethodDescription: ''
+          },
+          studyArms: '',
         }
       ]
       
@@ -301,7 +395,9 @@ export default function Chatbot() {
                                 ))}
                               </div>
                               <p className="text-xs text-slate-600 mb-3 leading-relaxed">
-                                {trial.description.length > 150 ? trial.description.substring(0, 150) + '...' : trial.description}
+                                {trial.description.brief.length > 150
+                                  ? trial.description.brief.substring(0, 150) + '...'
+                                  : trial.description.brief}
                               </p>
                               <div className="flex gap-2">
                                 <Button 
