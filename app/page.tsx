@@ -23,7 +23,7 @@ export default function HomePage() {
                 <Badge className="bg-teal-100 text-teal-700 border-teal-200 px-3 py-1 text-sm font-medium">
                   AI-Powered Matching
                 </Badge>
-                <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
                   Find Your Perfect{' '}
                   <span className="text-teal-600">Clinical Trial</span>
                 </h1>
@@ -34,7 +34,7 @@ export default function HomePage() {
 
               {/* Search Input */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
-                <div className="flex gap-4">
+                <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
                     <Input 
                       placeholder="Enter medical condition..." 
@@ -47,7 +47,7 @@ export default function HomePage() {
                       className="border-0 text-lg focus:ring-2 focus:ring-teal-500"
                     />
                   </div>
-                  <Button className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button className="w-full md:w-auto bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                     <Search className="w-5 h-5 mr-2" />
                     Search Trials
                   </Button>
@@ -55,7 +55,7 @@ export default function HomePage() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex items-center gap-6 text-sm text-slate-500">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-slate-500">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>Free to use</span>
@@ -73,7 +73,7 @@ export default function HomePage() {
 
             {/* Right Content - Doctor Image Only */}
             <div className="flex items-center justify-center">
-              <img src="/doctor.svg" alt="Doctor" className="w-80 h-80 object-contain mx-auto" />
+              <img src="/doctor.svg" alt="Doctor" className="w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 object-contain mx-auto" />
             </div>
           </div>
         </div>
@@ -166,10 +166,10 @@ export default function HomePage() {
 
           {/* Process Flowchart */}
           <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-500 to-blue-500 transform -translate-x-1/2"></div>
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-500 to-blue-500 transform -translate-x-1/2"></div>
             
             {/* Step 1 */}
-            <div className="relative flex items-start gap-6 mb-12">
+            <div className="relative flex flex-col md:flex-row items-start gap-6 mb-12">
               <div className="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg z-10">
                 1
               </div>
@@ -191,7 +191,7 @@ export default function HomePage() {
             </div>
 
             {/* Step 2 */}
-            <div className="relative flex items-start gap-6">
+            <div className="relative flex flex-col md:flex-row items-start gap-6">
               <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg z-10">
                 2
               </div>

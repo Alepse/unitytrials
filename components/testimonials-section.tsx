@@ -38,7 +38,7 @@ export default function TestimonialsSection() {
           <Badge className="bg-teal-100 text-teal-700 border-teal-200 mb-4 rounded-lg">
             ⭐ Patient Success Stories
           </Badge>
-          <h2 className="text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             Real Stories from Real People
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">

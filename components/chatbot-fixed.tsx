@@ -434,7 +434,7 @@ For more information, visit: https://clinicaltrials.gov/ct2/show/${trial.nctId}`
       )}
 
       {/* Enhanced Chatbot Toggle Button */}
-      <div className="fixed bottom-4 right-4 z-50">
+      <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50">
         <button
           data-testid="chatbot-toggle"
           onClick={toggleChatbot}
@@ -461,7 +461,7 @@ For more information, visit: https://clinicaltrials.gov/ct2/show/${trial.nctId}`
 
       {/* Enhanced Chatbot Window */}
       {isOpen && (
-        <div className="fixed bottom-20 right-4 w-96 h-[500px] bg-white rounded-2xl shadow-2xl border border-gray-200 z-40 flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 duration-300">
+        <div className="fixed bottom-24 right-2 md:right-6 w-[calc(100vw-1rem)] sm:w-[28rem] md:w-96 h-[70vh] md:h-[500px] bg-white rounded-2xl shadow-2xl border border-gray-200 z-40 flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 duration-300">
           {/* Enhanced Header */}
           <div className="relative bg-gradient-to-r from-teal-500 via-blue-500 to-teal-600 text-white p-4 rounded-t-2xl">
             {/* Animated background pattern */}

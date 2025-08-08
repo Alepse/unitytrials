@@ -37,12 +37,12 @@ export default function Component() {
               <p className="text-gray-300 mb-4 text-sm">
                 Get the latest clinical trial opportunities and healthcare research news.
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Input 
                   placeholder="Enter your email address" 
                   className="bg-white/20 border-white/30 text-white placeholder:text-gray-300 focus:border-blue-400"
                 />
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6">
+                <Button className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6">
                   Subscribe
                 </Button>
               </div>

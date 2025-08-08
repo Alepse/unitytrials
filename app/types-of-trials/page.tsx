@@ -94,7 +94,7 @@ export default function TypesOfTrialsPage() {
             <Badge className="bg-teal-100 text-teal-700 border-teal-200 px-3 py-1 text-sm font-medium mb-4">
               Understanding Clinical Trials
             </Badge>
-            <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Types of Clinical Trials
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">

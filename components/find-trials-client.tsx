@@ -181,7 +181,7 @@ export default function FindTrialsClient() {
             <Badge className="bg-teal-100 text-teal-700 border-teal-200 mb-4 rounded-lg">
               🔍 Advanced Trial Search
             </Badge>
-            <h1 className="text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Find Clinical Trials
               <br />
               <span className="text-teal-600">That Match Your Needs</span>
@@ -462,12 +462,12 @@ export default function FindTrialsClient() {
       {/* Featured Trials */}
       <section className="py-24 bg-gradient-to-br from-slate-50 to-teal-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-16">
+          <div className="flex items-center justify-between mb-16 gap-4 flex-col sm:flex-row text-center sm:text-left">
             <div>
-              <h2 className="text-5xl font-bold text-slate-900 mb-4">Featured Clinical Trials</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">Featured Clinical Trials</h2>
               <p className="text-xl text-slate-600">High-priority studies currently recruiting participants</p>
             </div>
-            <Badge className="bg-teal-100 text-teal-700 text-lg px-4 py-2 rounded-lg">
+            <Badge className="bg-teal-100 text-teal-700 text-base sm:text-lg px-4 py-2 rounded-lg">
               {featuredTrials.length} Featured Trials
             </Badge>
           </div>

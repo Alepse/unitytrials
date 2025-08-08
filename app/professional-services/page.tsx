@@ -43,18 +43,18 @@ export default function ProfessionalServicesPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl font-bold text-slate-900 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
                 Need Help Recruiting Patients?
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed">
                 Please contact us so we can help recruit the right patients for your studies.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
+                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
                   <Phone className="w-5 h-5 mr-2" />
                   Schedule Consultation
                 </Button>
-                <Button size="lg" variant="outline" className="border-2 border-teal-500 text-teal-700 hover:bg-teal-50 px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-xl">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-teal-500 text-teal-700 hover:bg-teal-50 px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-xl">
                   <Mail className="w-5 h-5 mr-2" />
                   Contact Us
                 </Button>
@@ -78,7 +78,7 @@ export default function ProfessionalServicesPage() {
       {/* Banner Section */}
       <section className="py-8 bg-slate-900">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center md:text-left">
             UnityTrials.org Helps With Patient Recruitment
           </h2>
         </div>
@@ -87,10 +87,10 @@ export default function ProfessionalServicesPage() {
       {/* Main Content Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="space-y-16">
+            <div className="space-y-12 md:space-y-16">
             {/* Section 1 */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
                 Accelerate Your Clinical Trials with Guaranteed Performance-Based Recruitment
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed">
@@ -100,11 +100,11 @@ export default function ProfessionalServicesPage() {
 
             {/* Section 2 */}
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
                 Why Clinical Trial Sponsors Choose UnityTrials.org:
               </h2>
               
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 {benefits.map((benefit, index) => {
                   const IconComponent = benefit.icon
                   return (
@@ -128,7 +128,7 @@ export default function ProfessionalServicesPage() {
 
             {/* Section 3 */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
                 Partner with Confidence:
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed">
@@ -138,18 +138,18 @@ export default function ProfessionalServicesPage() {
 
             {/* Section 4 */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
                 Ready to Accelerate Your Patient Recruitment?
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed">
                 Schedule a consultation today to discuss your trial's unique needs and learn how UnityTrials.org can achieve rapid, reliable recruitment backed by results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg" className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
+                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
                   <Phone className="w-5 h-5 mr-2" />
                   Schedule Consultation
                 </Button>
-                <Button size="lg" variant="outline" className="border-2 border-teal-500 text-teal-700 hover:bg-teal-50 px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-xl">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-teal-500 text-teal-700 hover:bg-teal-50 px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-xl">
                   <Mail className="w-5 h-5 mr-2" />
                   Request Information
                 </Button>
@@ -162,7 +162,7 @@ export default function ProfessionalServicesPage() {
       {/* Stats Section */}
       <section className="py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-teal-600 mb-2">500+</div>
               <div className="text-slate-600 font-medium">Studies Supported</div>
@@ -186,16 +186,16 @@ export default function ProfessionalServicesPage() {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-teal-600 to-blue-700 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Accelerate Your Patient Recruitment?</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Ready to Accelerate Your Patient Recruitment?</h2>
           <p className="text-xl mb-8 opacity-90">
             Schedule a consultation today to discuss your trial's unique needs and learn how UnityTrials.org can achieve rapid, reliable recruitment backed by results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-teal-600 hover:bg-slate-100 px-8 py-4 text-lg rounded-xl">
+            <Button size="lg" className="w-full sm:w-auto bg-white text-teal-600 hover:bg-slate-100 px-8 py-4 text-lg rounded-xl">
               <Phone className="w-5 h-5 mr-2" />
               Schedule Consultation
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-teal-600 hover:bg-white hover:text-blue-800 px-8 py-4 text-lg rounded-xl">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-teal-600 hover:bg-white hover:text-blue-800 px-8 py-4 text-lg rounded-xl">
               <Mail className="w-5 h-5 mr-2" />
               Contact Us
             </Button>

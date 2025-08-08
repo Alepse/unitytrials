@@ -67,7 +67,7 @@ export default function AboutPage() {
             <Badge className="bg-teal-100 text-teal-700 border-teal-200 mb-4 rounded-lg">
               🏥 About UnityTrials
             </Badge>
-            <h1 className="text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               We Make Finding &
               <br />
               Signing Up for Clinical
@@ -81,7 +81,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <Card key={index} className="bg-white/80 backdrop-blur-sm shadow-lg text-center rounded-2xl">
                 <CardContent className="p-6">
@@ -99,7 +99,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-5xl font-bold text-slate-900">Our Mission</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900">Our Mission</h2>
               <p className="text-lg text-slate-700 leading-relaxed">
                 Unity Trials is dedicated to connecting individuals with clinical trials, fostering greater participation 
                 and diversity to accelerate the development of innovative devices, diagnostics, and treatments. 
@@ -110,12 +110,12 @@ export default function AboutPage() {
                 connections, UnityTrials.org helps patients find the clinical trials that best align with their unique needs 
                 and circumstances, bridging the gap between medical research and those who need it most.
               </p>
-              <div className="flex gap-4">
-                <Button className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl">
                   <Search className="w-4 h-4 mr-2" />
                   Find Trials
                 </Button>
-                <Button variant="outline" className="border-2 border-teal-200 text-teal-700 hover:bg-teal-50 px-6 py-3 rounded-xl">
+                <Button variant="outline" className="w-full sm:w-auto border-2 border-teal-200 text-teal-700 hover:bg-teal-50 px-6 py-3 rounded-xl">
                   <Users className="w-4 h-4 mr-2" />
                   Learn More
                 </Button>
@@ -157,13 +157,13 @@ export default function AboutPage() {
       <section className="py-24 bg-gradient-to-br from-slate-50 to-teal-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-slate-900 mb-6">Our Core Values</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6">Our Core Values</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               These principles guide everything we do, from patient interactions to technology development.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((value, index) => {
               const IconComponent = value.icon
               return (
@@ -195,27 +195,27 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
             {teamMembers.map((member, index) => (
               <Card key={index} className="bg-white border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl">
                 <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
+                  <div className="flex flex-col sm:flex-row items-start gap-6">
                     <img 
                       src={member.image || "/placeholder.svg"} 
                       alt={member.name}
-                      className="w-24 h-24 rounded-full object-cover border-4 border-teal-200 flex-shrink-0"
+                      className="w-24 h-24 rounded-full object-cover border-4 border-teal-200 flex-shrink-0 mx-auto sm:mx-0"
                     />
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-slate-900 mb-1">{member.name}</h3>
                       <p className="text-teal-600 font-semibold mb-4">{member.role}</p>
                       <p className="text-slate-700 leading-relaxed mb-4">{member.bio}</p>
                       <p className="text-slate-600 leading-relaxed text-sm mb-4">{member.fullBio}</p>
-                      <div className="flex items-center gap-3">
-                        <Button size="sm" variant="outline" className="border-teal-200 text-teal-600 hover:bg-teal-50 rounded-xl">
+                      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                        <Button size="sm" variant="outline" className="w-full sm:w-auto border-teal-200 text-teal-600 hover:bg-teal-50 rounded-xl">
                           <Mail className="w-4 h-4 mr-2" />
                           Contact
                         </Button>
-                        <Button size="sm" variant="outline" className="border-teal-200 text-teal-600 hover:bg-teal-50 rounded-xl">
+                        <Button size="sm" variant="outline" className="w-full sm:w-auto border-teal-200 text-teal-600 hover:bg-teal-50 rounded-xl">
                           <Linkedin className="w-4 h-4 mr-2" />
                           LinkedIn
                         </Button>
@@ -233,7 +233,7 @@ export default function AboutPage() {
       <section className="py-24 bg-gradient-to-br from-teal-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-slate-900 mb-6">Our Trial Navigators</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6">Our Trial Navigators</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Our dedicated Trial Navigators provide personalized support throughout your clinical trial journey, 
               ensuring you have the guidance and assistance you need every step of the way.
@@ -286,7 +286,7 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-teal-600 to-blue-700 text-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-6">Ready to Start Your Journey?</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Journey?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
             Join thousands of patients who have found hope and healing through clinical trials. 
             Let our Trial Navigators help you find the research opportunity that could change your life.

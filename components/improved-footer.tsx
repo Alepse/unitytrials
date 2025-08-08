@@ -36,12 +36,12 @@ export default function ImprovedFooter() {
               <p className="text-slate-300 mb-4 text-sm">
                 We'll email you about the latest clinical trials and healthcare research opportunities.
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Input 
                   placeholder="E-mail address" 
                   className="bg-white/20 border-white/30 text-white placeholder:text-slate-300 focus:border-teal-400 rounded-xl"
                 />
-                <Button className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-semibold px-6 rounded-xl">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-semibold px-6 rounded-xl">
                   Subscribe
                 </Button>
               </div>
